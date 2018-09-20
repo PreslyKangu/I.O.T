@@ -1,3 +1,5 @@
+//input {on the arduino} 
+
 int in1 = 7;
 
 void setup() {
