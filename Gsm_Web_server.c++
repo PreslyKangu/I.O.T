@@ -8,8 +8,8 @@
  * GSM shield attached
  * Analog inputs attached to pins A0 through A5 (optional)
 
- created 8 Mar 2012
- by Tom Igoe
+ created 8 Mar 2017
+ by Presly_Kangu
  */
 
 // libraries
