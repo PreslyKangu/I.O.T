@@ -1,3 +1,5 @@
+//declaration
+
 #include <SoftwareSerial.h>
 
 SoftwareSerial mySerial(9, 10);
