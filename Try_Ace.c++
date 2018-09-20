@@ -1,7 +1,7 @@
 #include "Adafruit_FONA.h"
 #include <SoftwareSerial.h>
 
-//GSM
+// GSM
 #define FONA_RX 2
 #define FONA_TX 3
 #define FONA_RST 4
@@ -11,7 +11,9 @@ const char phoneNum[10]= "0704658304";
 #define ldr A0
 int ledPin = 13;
 //int ldrPin = A0;
+
 //RGB
+
 #define blue A5
 #define green A4
 #define red A3
@@ -22,7 +24,7 @@ int pirSensor = 8;
 int relayInput = 7;
 int LED = 12;
 
-//GSM objects declaration
+// GSM objects declaration
 SoftwareSerial fonaSS = SoftwareSerial(FONA_TX, FONA_RX);
 SoftwareSerial *fonaSerial = &fonaSS;
 
@@ -38,10 +40,10 @@ class controller{
       int sensorValue = digitalRead(pirSensor); //for motion
       int fireSignal=digitalRead(fireSensor); //fire
       int light=analogRead(ldr); //light
-    //global variables for the class
+    // global variables for the class
     
 
-          //function to detect intruder
+          // function to detect intruder
             bool detectMotion()
                   {
                     if (sensorValue == 1) {
@@ -51,7 +53,7 @@ class controller{
                     }
                     else
                     {
-                      //digitalWrite(relayInput, 0);
+                      // digitalWrite(relayInput, 0);
                       return false;
                     } 
                   }
@@ -81,7 +83,7 @@ class controller{
               }
             }
       
-          //actuators
+          // actuators
           void startBuzzer()
           {
             digitalWrite(relayInput,1);
@@ -114,7 +116,7 @@ class controller{
           {
             digitalWrite(ledPin,0);
           }
-       //colors for different scenarios using RGB
+       // colors for different scenarios using RGB
             void redLight()
             {
                 analogWrite(red,255);
@@ -141,7 +143,7 @@ class controller{
                 analogWrite(green,255);
             }
 
-            //GSM Methods
+            // GSM Methods
             void flushSerial() 
           {
             while (Serial.available())
@@ -191,21 +193,21 @@ void setup() {
     Serial.println(F("GSM developed a network issue \npossibly lack of SIM-Card "));
     while (1);
   }*/
-    //inputs
+    // inputs
     pinMode(fireSensor,INPUT);
     pinMode(pirSensor, INPUT);
     pinMode(ldr, INPUT);
 
-    //Outputs
+    // Outputs
     pinMode(ledPin, OUTPUT);
     pinMode(relayInput, OUTPUT);
-    //RGB
+    // RGB
     pinMode(red, OUTPUT);
     pinMode(green, OUTPUT);
     pinMode(blue, OUTPUT);
 
-   //serial monitor
-  //Serial.begin(9600); 
+   // serial monitor
+  // Serial.begin(9600); 
 }
 
 
