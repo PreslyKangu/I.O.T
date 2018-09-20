@@ -135,7 +135,7 @@ void alarmState() {
       alarm = !alarm;
       Serial.print("Alarm=");
       Serial.println(alarm);
-    }  
+    } 
 } 
 }
 
