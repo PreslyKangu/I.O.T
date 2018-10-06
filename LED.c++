@@ -1,4 +1,4 @@
-//input {on the arduino} 
+// declaring the pins 
 
 int in1 = 7;
 
